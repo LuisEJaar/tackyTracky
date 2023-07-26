@@ -1,17 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Current Calendar
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div class="w-100">
+    <ion-datetime #datetime [(ngModel)]="myDate" [highlightedDates]="highlightedDates" presentation="date" class="w-100">
+      <ion-buttons slot="buttons">
+        <ion-button color="danger" (click)="logDate()">Log Date</ion-button>
+        <ion-button color="primary" (click)="editDate()">Edit</ion-button>
+        <ion-button color="primary" (click)="viewDate()">View</ion-button>
+      </ion-buttons>
+    </ion-datetime>
+  </div>
 </ion-content>
